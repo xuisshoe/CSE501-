@@ -2,11 +2,13 @@ package lab0;
 
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
+import java.awt.image.BufferedImage;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -59,7 +61,9 @@ public class RobotController extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		final ImagePanel panel = new ImagePanel(new ImageIcon("images/Map.jpg").getImage());
+		BufferedImage image = new BufferedImage(1000, 600, BufferedImage.TYPE_INT_RGB);
+		image.getGraphics().fillRect(0, 0, image.getWidth(), image.getHeight());
+		final ImagePanel panel = new ImagePanel(image);
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(1034, 13, 138, 269);
 		contentPane.add(scrollPane);
@@ -133,7 +137,7 @@ public class RobotController extends JFrame {
 		RobotView view = new RobotView(model.pcs);
 		model.setSpeed(speed);
 		panel.add(view.getRobot());
-		model.setLocation(529, 250);
+		model.setLocation(500, 550);
 		RobotMotionAdapter motion = new RobotMotionAdapter(model);
 		RobotThread t = new RobotThread(motion, instructions);
 		t.start();
