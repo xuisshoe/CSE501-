@@ -61,9 +61,7 @@ public class RobotController extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		BufferedImage image = new BufferedImage(1000, 600, BufferedImage.TYPE_INT_RGB);
-		image.getGraphics().fillRect(0, 0, image.getWidth(), image.getHeight());
-		final ImagePanel panel = new ImagePanel(image);
+		final ImagePanel panel = new ImagePanel(new ImageIcon("images/JMap.jpg").getImage());
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(1034, 13, 138, 269);
 		contentPane.add(scrollPane);
@@ -84,6 +82,7 @@ public class RobotController extends JFrame {
 		contentPane.add(btnGo);
 
 		slider = new JSlider();
+		slider.setValue(5);
 		slider.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent arg0) { 
 					speed = slider.getValue()/4 + 1;
@@ -137,7 +136,7 @@ public class RobotController extends JFrame {
 		RobotView view = new RobotView(model.pcs);
 		model.setSpeed(speed);
 		panel.add(view.getRobot());
-		model.setLocation(500, 550);
+		model.setLocation(654, 155);
 		RobotMotionAdapter motion = new RobotMotionAdapter(model);
 		RobotThread t = new RobotThread(motion, instructions);
 		t.start();
