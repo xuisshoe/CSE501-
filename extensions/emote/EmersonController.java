@@ -110,7 +110,7 @@ public class EmersonController extends JFrame {
 		double mood = 2.0*happiness.getValue()/100.0 - 1.0;
 		double thing = 2.0 * other.getValue()/100.0 - 1.0;
 		StdDraw.clear();
-		Emerson.emote(0.5, 0.5, 0.3, 0.3, temp, mood, thing);
+		Emersyn.emote(0.5, 0.5, 0.3, 0.3, temp, mood, thing);
 //		Emerson.emote(0.25, 0.75, 0.25, 0.25, temp, -1*mood, thing);
 //		Emerson.emote(0.75, 0.25, 0.25, 0.25, -1*temp, mood, thing);
 //		Emerson.emote(0.75, 0.75, 0.25, 0.25, temp, mood, -1*thing);

@@ -4,7 +4,7 @@ import java.awt.Color;
 
 import sedgewick.StdDraw;
 
-public class Emerson {
+public class Emersyn {
 
 	/**
 	 * Coordinates and dimensions use the StdDraw coordinate system
