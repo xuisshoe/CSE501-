@@ -55,4 +55,8 @@ public class Controller {
 		return this.history;
 	}
 	
+	public GameProperties getGameProperties() {
+		return this.game;
+	}
+	
 }
