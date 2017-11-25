@@ -1,5 +1,6 @@
 package lab9;
 
+import cse131.ArgsProcessor;
 import lab9.implementations.RandomColorProvider;
 import lab9.implementations.RandomGuessProvider;
 import lab9.implementations.StaticGuessProvider;
@@ -11,6 +12,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		
+		ArgsProcessor ap = new ArgsProcessor(args);
+		
 		//
 		// Always wins -- code maker and breaker are the same
 		//
@@ -20,6 +23,8 @@ public class Main {
 		
 		Controller cwins = new Controller(gameWins, codeMaker, codeMaker);
 		cwins.run();
+		
+		ap.nextString("Press enter to continue");
 		
 		//
 		// likely not to win, but should stop on the first repeated guess
@@ -35,6 +40,7 @@ public class Main {
 		//
 		Controller cprobnowin = new Controller(gameAlwaysSameGuess, codeMaker, likelyDifferent);
 		cprobnowin.run();
+		ap.nextString("Press enter to continue");
 		
 		//
 		// Random guessing version, likely not to win
@@ -44,6 +50,7 @@ public class Main {
 		ProvidesGuess randCodeBreaker = new RandomGuessProvider(randomGame);
 		Controller rcontroller = new Controller(randomGame, codeMaker2, randCodeBreaker);
 		rcontroller.run();
+		ap.nextString("Press enter to continue");
 				
 		
 		//
@@ -59,6 +66,7 @@ public class Main {
 		ProvidesGuess interactiveBreaker = ColorChooser.launchChooser(interactive, pc);
 		Controller c = new Controller(interactive, codeMaker3, interactiveBreaker);
 		c.run();
+		ap.nextString("Press enter to continue");
 
 	}
 
