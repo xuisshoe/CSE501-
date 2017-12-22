@@ -14,7 +14,7 @@ public class FindTheFrame {
 	//
 
 	public static void main(String[] args) {
-		File file = ArgsProcessor.chooseFile("genomes");
+		File file = ArgsProcessor.chooseFile("datafiles/genomes");
 		System.out.println("For " + file + ", best reading frame is " + runsolution(file));
 	}
 	

@@ -24,7 +24,7 @@ public class GCContent {
 		//
 		// Open the file with the sequence contents
 		//
-		File file = new File("genomes/"+genomeName+".fasta");
+		File file = new File("datafiles/genomes/"+genomeName+".fasta");
 
 		//
 		// Load the sequence into a DNASequence object
