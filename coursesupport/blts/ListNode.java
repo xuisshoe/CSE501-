@@ -14,8 +14,10 @@ public class ListNode<T> {
 	public int sum2() {
 		int ans = 0;
 		for (ListNode<T> p = this; p != null; p = p.next) {
-			ans = ans + p.value; // fail!
+			// uncomment the following line to see the fail
+			//ans = ans + p.value; // fail!
 		}
+		return 0;
 	}
 	
 	// static and recursive 
