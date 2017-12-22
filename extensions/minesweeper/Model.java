@@ -1,4 +1,4 @@
-package lab3;
+package minesweeper;
 
 public class Model {
 

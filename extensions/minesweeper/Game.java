@@ -1,12 +1,11 @@
-package lab3;
+package minesweeper;
 
 import java.io.PrintStream;
 
-import lab3.viz.Controller;
-import lab3.viz.StreamToBoardAdapter;
-
 import cse131.ArgsProcessor;
 import cse131.CaptureOutput;
+import minesweeper.viz.Controller;
+import minesweeper.viz.StreamToBoardAdapter;
 
 public class Game {
 

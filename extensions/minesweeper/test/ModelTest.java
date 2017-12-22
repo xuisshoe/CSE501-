@@ -1,6 +1,6 @@
-package lab3.test;
+package minesweeper.test;
 
-import lab3.Model;
+import minesweeper.Model;
 
 public class ModelTest {
 

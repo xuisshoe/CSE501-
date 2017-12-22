@@ -1,4 +1,4 @@
-package lab3.viz;
+package minesweeper.viz;
 
 import java.awt.EventQueue;
 
@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import lab3.Model;
+import minesweeper.Model;
 
 import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;

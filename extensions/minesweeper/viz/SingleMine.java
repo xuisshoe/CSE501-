@@ -1,4 +1,4 @@
-package lab3.viz;
+package minesweeper.viz;
 
 import java.awt.Color;
 

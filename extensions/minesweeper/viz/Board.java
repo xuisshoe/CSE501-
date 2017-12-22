@@ -1,6 +1,6 @@
-package lab3.viz;
+package minesweeper.viz;
 
-import lab3.Model;
+import minesweeper.Model;
 
 public class Board {
 

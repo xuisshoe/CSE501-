@@ -1,4 +1,4 @@
-package lab3.viz;
+package minesweeper.viz;
 
 
 public class StreamToBoardAdapter {

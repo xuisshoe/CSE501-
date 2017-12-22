@@ -3,6 +3,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import cse131.ArgsProcessor;
 import sedgewick.StdDraw;
 
 
@@ -18,7 +19,7 @@ public class GetMousePositionTest {
 	public void testGetMousePosition() throws InterruptedException{
 
 		for (int i=0; i<50; i++){
-			
+
 			StdDraw.clear();
 			myMousePos = new double[]{StdDraw.mouseX(), StdDraw.mouseY()};
 			theirMousePos = FollowTheMouse.getMousePosition();
@@ -28,10 +29,18 @@ public class GetMousePositionTest {
 			yPos = yPos - Math.random()*.05;
 			StdDraw.filledCircle(xPos, yPos, .02);
 			StdDraw.show(50);
-			
-			
-		}
 
+
+		}
 	}
+
+	@Test
+	public void testDrawBall() {
+		double[] tester = new double[]{.5, .5};
+		FollowTheMouse.drawBall(tester, .2);
+		assertTrue(new ArgsProcessor(new String[0]).nextBoolean("Looks OK? (true or false)"));
+	}
+
+
 
 }
