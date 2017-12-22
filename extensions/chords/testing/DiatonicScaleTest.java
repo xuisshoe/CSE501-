@@ -24,8 +24,8 @@ public class DiatonicScaleTest {
 			int key = kp.key;
 			int pitch = kp.pitch;
 			assertEquals("Key "  + key + " and pitch " + pitch + " should be concert A (440Hz)", 
+					440,
 					new DiatonicScale(key).getPitch(pitch).getHertz(), 
-					440, 
 					.001
 					);
 			
