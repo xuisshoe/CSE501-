@@ -276,6 +276,21 @@ public class SparsePolynomialTest extends TestCase {
 		System.out.println("p2's derivative is " + p2.derivative());
 		System.out.println("Newly constructed poly is " + new SparsePolynomial());
 	}
+	
+	@Test
+	public void testHCEquals() {
+		for (int i=0; i < 100; ++i) {
+			Term[] randTerms = genTerms(i);
+			Term[] randTerms2 = new Term[i];
+			for (int j=0; j < i; ++j) {
+				randTerms2[j] = new Term(randTerms[j].getCoefficient(), randTerms[j].getDegree());
+			}
+			Polynomial p1 = new SparsePolynomial(randTerms);
+			Polynomial p2 = new SparsePolynomial(randTerms2);
+			assertEquals("Hashcode of " + p1 + " and " + p2 + " should be the same",p1.hashCode(),p2.hashCode());
+			assertTrue("Poly " + p1 + " should equal Poly " + p2, p1.equals(p2));
+		}
+	}
 
 
 	/**
