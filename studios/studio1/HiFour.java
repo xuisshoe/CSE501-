@@ -9,13 +9,13 @@ import cse131.ArgsProcessor;
 public class HiFour {
 	public static void main(String[] args) {
 		ArgsProcessor ap = new ArgsProcessor(args);
-		String s0 = ap.nextString("Enter value for arg 0");
-		String s1 = ap.nextString("Enter value for arg 1");
-		String s2 = ap.nextString("Enter value for arg 2");
-		String s3 = ap.nextString("Enter value for arg 3");
+		String n0 = ap.nextString("Enter the first name: ");
+		String n1 = ap.nextString("Enter the second name:");
+		String n2 = ap.nextString("Enter the third name:");
+		String n3 = ap.nextString("Enter the fourth name:");
 		//
 		// Say hello to the names in s0 through s3.
-		//
+		System.out.println("Greetings " + n0 + ", " + n1 + ", " + n2 + ", and " + n3 + "." );
 
 	}
 }
