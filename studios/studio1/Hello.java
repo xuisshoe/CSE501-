@@ -9,8 +9,12 @@ public class Hello {
 		
 		String mood = ap.nextString("How are you feeling today?");
 		
+		int a = 53 % 10;
+		
 		System.out.println("Hello and welcome to CSE 131!");
 		System.out.println("You seem to be feeling " + mood);
+		System.out.println(a);
+		
 	}
 
 }

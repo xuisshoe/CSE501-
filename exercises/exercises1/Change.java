@@ -11,7 +11,7 @@ public class Change {
 		// prompting how many penies total 
 		ArgsProcessor ap = new ArgsProcessor(args);
 		
-		// calculating money
+		// calculating money in different unit 
 		int totalPeny = ap.nextInt("Total number of penies ?");
 		int totalDollar = totalPeny / 100;
 		int totalQuarter = (totalPeny % 100) / 25;
