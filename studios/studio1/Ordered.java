@@ -25,7 +25,7 @@ public class Ordered {
 	// print out average result 
 	//	System.out.println("The average of x and y is " + ave);
     // print out name 
-	//	System.out.println("The name of the student is " + name);
+	//	//System.out.println("The name of the student is " + name);
 	}
 
 }
