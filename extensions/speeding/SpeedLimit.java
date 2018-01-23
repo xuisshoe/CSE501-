@@ -8,27 +8,25 @@ public class SpeedLimit {
 
 		ArgsProcessor ap = new ArgsProcessor(args);
 		// input variables
-		int speed = ap.nextInt("Enter the speed at which you were caught :");
+		int speed = ap.nextInt("Enter your reported speed :");
 		int spdLimit = ap.nextInt("Enter the speed limit of the raod :");
+		//calculating speed and fine
+		int spdDiff = speed - spdLimit;
+		int spdNot = (spdDiff > 0) ? 1:0;
+		int spdOver = (spdDiff > 0) ? spdDiff:0;
+		int spdBig = (spdOver > 10) ? 1:0;
+		int spdFine = (50 + spdBig*(spdDiff - 10)*10)*spdNot;
+		
 		
 		// calculation
 		
-		//while loop for speeding
-		if (speed > spdLimit) {
-		   int spdDiff = speed - spdLimit;
-			  // when speeding over 10mph over limit
-			  if (spdDiff > 10) {
-			 	 int overCost = (spdDiff - 10) * 10;
-				 int fineBig = 50 + overCost;
-				 System.out.println("You are speeding over 10mph over the limit, your fine is : " + fineBig + " dollors.");
-			  }
-			  else {
-		         System.out.println("You are not speeding under the 10mph over the limit, your fine is: " + 50 + " dollars");
-			  }
-	     }
-		else {
-			System.out.println("Good, you are not speeding !");
-		};
+		
+		System.out.println("You reported a speed of " + speed + " MPH for a speed limit of " + spdLimit + " MPH.");
+			 
+		System.out.println("You went " + spdOver + " MPH over the speed limit.");
+		
+		System.out.println("Your fine is $" + spdFine + ".");
+	
 
 }
 }
