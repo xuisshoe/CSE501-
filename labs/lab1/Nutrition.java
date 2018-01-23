@@ -11,19 +11,20 @@ import cse131.ArgsProcessor;
 		double carb = ap.nextDouble("Enter the gram of carbs the food has :");
 		double fat = ap.nextDouble("Enter the gram of fat the food has :");
 		double protein = ap.nextDouble("Enter the gram of protein the food has :");
-		int stateCal = ap.nextInt("Enter the number of calories stated :");
+		double stateCal = ap.nextInt("Enter the number of calories stated :");
 		// calculating calories
-		double calCarb = carb * 4.0;
-		double calFat =  fat * 9.0;
-		double calProtein = protein * 4.0;
-		double unCal = Math.round(calCarb + calFat + calProtein - stateCal );
-		double fiber = Math.round(unCal / 4.0);
+		double calCarb = carb * 4;
+		double calFat = (fat * 9);
+		double calfat = (double)Math.round(fat*9*1000)/1000;
+		double calProtein = protein * 4;
+		double unCal = (double)Math.round((calCarb + calFat + calProtein - stateCal )*10)/10;
+		double fiber = (double)Math.round((unCal / 4.0)*100)/100;
 		
 		// calculate approximate content
-		double totalWeight = Math.round( carb + fat + protein );
-		double portionCarb = Math.round( (carb / totalWeight ) * 100.0 );
-		double portionFat = Math.round( (fat / totalWeight ) * 100.0 );
-		double portionProtein = Math.round( (protein / totalWeight) * 100.0 );
+		//double totalWeight = ( calCarb + calFat + calProtein );
+		double portionCarb = (double)Math.round( (calCarb*1000/ stateCal) )/10;
+		double portionFat = (double)Math.round( (calFat / stateCal *1000.0) )/10;
+		double portionProtein = (double)Math.round( (calProtein / stateCal *1000.0) )/10;
 		
 		//determin if healthy 
 		boolean lowCarb = portionCarb < 25.0;
@@ -34,10 +35,11 @@ import cse131.ArgsProcessor;
 		boolean eat = randNum > 0.5;
 		
 		// print text 
-		System.out.println(name + "has: ");
-		System.out.println("   " + carb + "grams of carbohydrates = " + calCarb + " calories");
-		System.out.println("   " + fat + "grams of fat = " + calFat + "calories");	
-		System.out.println("   " + protein + "grams of protein = " + calProtein + " calories");
+		System.out.println(name + " has: ");
+		System.out.println("   " + carb + " grams of carbohydrates = " + calCarb + " calories");
+		System.out.println("   " + fat + " grams of fat = " + calfat + " calories");	
+		//System.out.println("   " + fat + " grams of fat = " + calFat + " calories");	
+		System.out.println("   " + protein + " grams of protein = " + calProtein + " calories");
 		System.out.println("    ");
 		System.out.println("This food is said to have " + stateCal + " (available) calories." );
 		System.out.println("With " + unCal + " unavailable Calories, this food has " + fiber + " grams of fiber.");
