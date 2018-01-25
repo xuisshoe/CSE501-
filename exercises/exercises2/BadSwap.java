@@ -25,9 +25,9 @@ public class BadSwap {
 		//   Note that the bad swap executes only if x>y
 		//
 		// Your answer:
-		//
-		//
-		//
+		// If the if statement condition is meet, the code "x=y" will give the original y value to x. At 
+		// this point, x and y are both equal to the original y value, hence the swap code "y = x" will not work
+		// since they already have the same value.
 		//
 		//
 		//
