@@ -16,7 +16,7 @@ public class Max {
 		//   execution to print the larger of the two values.
 		//
 		if (x > y){
-			System.out.println("The max number of the two is X.");
+			System.out.println("The max between " + x + " and " + y + " is " + x);
 		}
 			
 		else {
@@ -24,7 +24,7 @@ public class Max {
 				System.out.println("Two numbers are equal.");
 			}
 			else {
-				System.out.println("The max number of the two is Y.");
+				System.out.println("The max between " + x + " and " + y + " is " + y);
 			}
 		}
 		
