@@ -15,11 +15,11 @@ public class Shuffle {
 		}
 		// starting from the bottom of the shuffle pile 
 		for (int c = original.length - 1; c >= 0; c--) {
-			int p = (int) (Math.random() * (c+1));
-			shuffle[c] = original[p];
-			String t = original[c];
-			original[c] = original[p];
-			original[p] = t;
+			int p = (int) (Math.random() * (c + 1));  // randomly pick a letter to
+			shuffle[c] = original[p];  // put the letter at the current bottom position
+			String t = original[c];  //save the current bottom position letter
+			original[c] = original[p];  // swap the chosen letter to bottom position to avoid being chosen again
+			original[p] = t;  //put the original bottom letter into the top rack, wait to be selected
 			
 			
 		}
