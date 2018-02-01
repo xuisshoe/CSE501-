@@ -82,7 +82,7 @@ public class Nim {
 			}
 		}
 		
-		//finish
+		//finishlol
 		
 		
 		}
