@@ -135,11 +135,34 @@ public class Filters {
 	 * @param tolerance the saturation difference between color components, such that they are considered the same
 	 * @return
 	 */
+	// this is the background filter 
 	public static Color bgSubtract(Color source1Color, Color source2Color, int tolerance) {
-		return Color.black;
+		tolerance = 10;
+		int red1 = source1Color.getRed(); // + source1Color.getGreen() + source1Color.getBlue() ;
+		int red2 = source2Color.getRed(); //+ source2Color.getGreen() + source2Color.getBlue() ;
+		int colDiff = Math.abs(red1 - red2);
+		if ( colDiff <= tolerance) {
+			return Color.blue;
+		}
+		else {
+			return source1Color;
+		}
 
 	}
-
+	public static Color bgReplace(Color source1Color, Color source2Color, int tolerance) {
+		tolerance = 10;
+		int color1 = source1Color.getRGB(); // + source1Color.getGreen() + source1Color.getBlue() ;
+		int blue = Color.blue.getRGB();
+		if (color1 == blue) {
+			return source2Color;
+		}
+		else {
+			return source1Color;
+		}
+		
+	}
+	
+    // this is another filter 
 	private static Random r = new Random();
 	public static Color genRandomColor() {
 		return new Color(r.nextInt(256), r.nextInt(256), r.nextInt(256));		
@@ -150,5 +173,8 @@ public class Filters {
 	public static Color bgReplace(Color s1Color, Color s2Color) {
 		return genRandomColor();
 	}
+
+	
+
 
 }

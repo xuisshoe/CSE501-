@@ -12,7 +12,8 @@ public class ImageProcessor {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		final MenuTransformable[] menus = new MenuTransformable[] {			
+		final MenuTransformable[] menus = new MenuTransformable[] {	
+			
 				GUI.genMenuTransform("darker", new ComponentFilter() {
 					@Override
 					public int filter(int in[]) {
@@ -81,6 +82,19 @@ public class ImageProcessor {
 					public Color filter(Color in[]) {
 						return Filters.combineBrighter(in[0], in[1]);
 					}
+				}),
+				// this is the filter for subtract background 
+				GUI.genMenuTransform("bgSubtract", new ColorFilter() {
+					@Override
+					public Color filter(Color in[]) {
+						return Filters.bgSubtract(in[0], in[1], 0);
+					}
+				}),
+				GUI.genMenuTransform("bgReplace", new ColorFilter() {
+					@Override
+					public Color filter(Color in[]) {
+						return Filters.bgReplace(in[0], in[1], 0);
+					}
 				})
 		};
 
@@ -96,6 +110,9 @@ public class ImageProcessor {
 					frame.addPictureToTopBar(new File("images/brookings.jpg"));
 					frame.addPictureToTopBar(new File("images/chicken.jpg"));
 					frame.addPictureToTopBar(new File("images/arch.jpg"));
+					frame.addPictureToTopBar(new File("images/one-bear.jpg"));
+					frame.addPictureToTopBar(new File("images/two-bears.jpg"));
+					frame.addPictureToTopBar(new File("images/two-bearsrev.jpg"));
 					//frame.addPictureToTopBar(new File("images/FranAllen.jpg"));
 					frame.getSource1().setPicture(new Picture("images/brookings.jpg"));
 					frame.getSource2().setPicture(new Picture("images/wrighton.jpg"));
