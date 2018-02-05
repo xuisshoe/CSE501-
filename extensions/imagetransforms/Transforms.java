@@ -33,12 +33,34 @@ public class Transforms {
 	}
 	
 	public static void flipVert(Picture source, Picture target) {
-		// FIXME
+		// flip the picture upside down 
+		for (int y = 0; y < source.height(); y++) {
+			for (int x = 0; x < source.width(); x++) {
+				int otherY = source.height() - 1 - y; //find the corresponding mirror point for y
+				Color c = source.get(x , otherY); // read the color of the mirror y 
+				target.set(x, y, c);//assign the color of the mirror y to the target y 
+				// loop through the full height of the picture 
+			}
+		}
+		
 	}
 	
 	
 	public static void flipHorizLeftHalf(Picture source, Picture target) {
 		// FIXME
+		for (int x = 0; x <= source.width()/2; x++ ){
+			for(int y = 0; y < source.height(); y++) {
+				Color c = source.get(x, y);
+				target.set(x, y, c);
+			}
+		}
+		for (int x = source.width()/2 + 1; x > source.width()/2 && x < source.width(); x++) {
+			for(int y = 0; y < source.height(); y++) {
+				int otherX = (source.width()-1)/2 - (x - (source.width()-1)/2);
+				Color c = source.get(otherX, y);
+				target.set(x, y, c);
+			}
+		}
 	}
 	
 	public static void flipVertBotHalf(Picture source, Picture target) {
