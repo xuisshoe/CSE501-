@@ -64,12 +64,35 @@ public class Transforms {
 	}
 	
 	public static void flipVertBotHalf(Picture source, Picture target) {
-		// FIXME
+		// copy the top half of the original picture
+		for(int y = 0; y <= source.height()/2; y++) {
+			for(int x = 0; x < source.width(); x++) {
+				Color c = source.get(x, y);
+				target.set(x, y, c);
+			}
+		}
+		// flip the top half and place it at bottom
+		for (int y = source.height()/2 + 1 ; y < source.height(); y++) {
+			for (int x = 0; x < source.width(); x++) {
+				int upperY = source.height()/2 - ( y - source.height()/2 );
+				Color c = source.get(x, upperY);
+				target.set(x, y, c);
+			}
+		}
+		
 	}
 	
 	public static void gradient(Picture target) {
-		// FIXME
-				
+		for(int x = 0; x < target.width(); x++) {
+			for(int y = 0; y < target.height(); y++) {
+				// red is in proportion to the width, slope 255/width
+				int redAmount = 255 * x / target.width(); //put 255*x together to guarantee nonzero value
+				// green is in proportion to the height, slope 255/width. 
+				int greenAmount = 255 * y / target.height(); //put 255*y together to guarantee nonzero value 
+				target.set(x, y, new Color(redAmount, greenAmount, 128));
+				//System.out.println(redAmount + "    " + greenAmount);
+			}
+		}
 	}
 	
 	public static void edgeDetect(Picture source, Picture target) {
