@@ -65,10 +65,12 @@ public class Dice {
 			System.out.print("-------");
 		}
 		System.out.println("-----");
-		//begin implement sentence
+		//implementing summary sentence
 		System.out.println("All " + n + " dice have same value happened "+ sameTime + " in " + m +" times.");
-		double ratio = (double) sameTime / m;
-		System.out.println("The fraction is " + ratio + ".");
+		// calculating ratio of three same valued dice 
+		double ratio = (double) Math.round( (sameTime*100 / m))/100;
+		//double fiber = (double)Math.round((unCal / 4.0)*100)/100;
+		System.out.println("The fraction is " + ratio);
 		// print 2nd table label
 		System.out.println("----------------");
 		System.out.println(" Sum  Frequency" );
