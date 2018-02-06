@@ -74,7 +74,9 @@ public class Dice {
 		// print 2nd table label
 		System.out.println("----------------");
 		System.out.println(" Sum  Frequency" );
+		System.out.println("----------------");
 		
+		// calculating how sum frequency and print sum value with its frequency with no recursion
 		// copy sum array
 		int diceSum1[] = new int[m];
 		for (int i = 0; i< m; i++) {

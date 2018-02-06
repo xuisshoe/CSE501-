@@ -5,6 +5,7 @@ import cse131.ArgsProcessor;
 public class dice1 {
 
 	public static void main(String[] args) {
+		// a sample one time throw dice simulation with n optional dice numbers
 		ArgsProcessor ap = new ArgsProcessor(args);
 		// input the number of dice  
 		int n = ap.nextInt("Please enter the number of dice you want to roll: ");	
