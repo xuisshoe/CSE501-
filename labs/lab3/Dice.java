@@ -20,7 +20,6 @@ public class Dice {
 		System.out.println("-----");
 		// global parameter
 		int sameTime = 0;
-		int k = 0;
 		int diceSum[] = new int[m];   // dice sum array
 		// loop for m times of throw
 		for (int j = 0; j < m; j++) {
@@ -46,17 +45,17 @@ public class Dice {
 				}
 			}
 			// end of the dice throw for one time
-			
 			// loop to count how many same value we have for each throw
+			int k = 0;
 			for (int i = 0; i < n-1; i++) {
 				if (diceVal[i] == diceVal[i+1]) {
 					k = k + 1;
 				}	
 			}
-			//if same value is equal to dice number then this is a same value throw, 
 			if (k == n-1) {  
 				sameTime = sameTime + 1; // update the same value throw by one
 			}
+			//if same value is equal to dice number then this is a same value throw, 
 			
 		}
 		// end of the m times throw 
@@ -69,6 +68,7 @@ public class Dice {
 		System.out.println("All " + n + " dice have same value happened "+ sameTime + " in " + m +" times.");
 		// calculating ratio of three same valued dice 
 		double ratio = (double) Math.round( (sameTime*100 / m))/100;
+		sameTime = 0;
 		//double fiber = (double)Math.round((unCal / 4.0)*100)/100;
 		System.out.println("The fraction is " + ratio);
 		// print 2nd table label
@@ -96,8 +96,5 @@ public class Dice {
 			}
 		}
 		
-		
-
 	}
-
 }
