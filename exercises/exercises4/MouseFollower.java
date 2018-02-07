@@ -9,8 +9,9 @@ public class MouseFollower {
 
 	public static void main(String[] args) {
 		ArgsProcessor ap = new ArgsProcessor(args);
+		// prompt user how much data to store, the more it is, more lag the follower would be 
 		int N = ap.nextInt("How much info to store ?");
-		
+		// array to store mouse location
 		double mouseX[] = new double[N];
 		double mouseY[] = new double[N];
 		int ite = 0;
@@ -27,7 +28,7 @@ public class MouseFollower {
 			mouseY[ite] = y;
 			ite = ite + 1;
 			
-			// reset once memoey is out of bond
+			// reset once memory is out of bond
 			if (ite >= N) {
 				ite = 0;
 			}
