@@ -63,7 +63,7 @@ public class Filters {
 	//from 256 to 2, by returning either 0 or 255 based on the original value.
 	// USED IN: posterize
 	public static int posterize(int a) {
-		return (a / 128) * 254 + 2;   // FIXME
+		return (a / 128) * 255;   // FIXME
 	}
 
 	//This method returns a color that is brighter than the original color.
@@ -97,7 +97,7 @@ public class Filters {
 		else {
 			return Color.black;  
 		}
-		
+
 	}
 
 	//This method combines two images by choosing for each location the brighter 
@@ -137,7 +137,7 @@ public class Filters {
 	 */
 	// this is the background filter 
 	public static Color bgSubtract(Color source1Color, Color source2Color, int tolerance) {
-		tolerance = 10;
+		//tolerance = 10;
 		int red1 = source1Color.getRed(); // + source1Color.getGreen() + source1Color.getBlue() ;
 		int red2 = source2Color.getRed(); //+ source2Color.getGreen() + source2Color.getBlue() ;
 		int colDiff = Math.abs(red1 - red2);
@@ -149,20 +149,15 @@ public class Filters {
 		}
 
 	}
-	public static Color bgReplace(Color source1Color, Color source2Color, int tolerance) {
-		tolerance = 10;
-		int color1 = source1Color.getRGB(); // + source1Color.getGreen() + source1Color.getBlue() ;
-		int blue = Color.blue.getRGB();
-		if (color1 == blue) {
-			return source2Color;
-		}
-		else {
-			return source1Color;
-		}
-		
-	}
-	
-    // this is another filter 
+//	public static Color bgReplace(Color source1Color, Color source2Color, int tolerance) {
+//		//tolerance = 10;
+//		//int color1 = source1Color.getRGB(); // + source1Color.getGreen() + source1Color.getBlue() ;
+//		//int blue = Color.blue.getRGB();
+//		
+//
+//	}
+
+	// this is another filter 
 	private static Random r = new Random();
 	public static Color genRandomColor() {
 		return new Color(r.nextInt(256), r.nextInt(256), r.nextInt(256));		
@@ -171,10 +166,15 @@ public class Filters {
 	//second image if the color from the first image is blue; otherwise returns
 	//the color from the first image.
 	public static Color bgReplace(Color s1Color, Color s2Color) {
-		return genRandomColor();
+		if (s1Color.equals(Color.BLUE)) {
+			return s2Color;
+		}
+
+		return s1Color;
+
 	}
 
-	
+
 
 
 }
