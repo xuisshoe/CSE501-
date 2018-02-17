@@ -1,12 +1,12 @@
-I am your robotic CSE131 grader, and I provide the following report for your edification.
+Greetings from your synthetically friendly robotic CSE131 grader!
 Quiz report for hanx940:
-Report prepared at Sat Feb 17 08:46:00 CST 2018
+Report prepared at Sat Feb 17 09:29:23 CST 2018
 
 Question:
    After running this code, what is the value of array[5]?
    Grading function: answer=="12"
    Your answer was: 12
-Way to go! You have earned 10 points.
+You have chosen wisely! You have earned 10 points.
 
 Explanation: array[5] does not change in this code, so it is 12 as originally assigned.
 
@@ -22,7 +22,7 @@ Question:
    After running this code, what is the value of array[3]?
    Grading function: answer=="12"
    Your answer was: 12
-Nice job! You have earned 10 points.
+You have chosen wisely! You have earned 10 points.
 
 Explanation: array[3] is set to the value of array[5], which is 12 as origiinally assigned.
 
@@ -54,7 +54,7 @@ Question:
    What belongs in section D?
    Grading function: answer=="3*(i+1)"
    Your answer was: 3*(i+1)
-Way to go! You have earned 10 points.
+You have chosen wisely! You have earned 10 points.
 
 Explanation: To achieve the sequence 3, 6, 9, ..., with i starting at 0, we must use the expression 3i+1 at "D".
 
@@ -62,7 +62,7 @@ Question:
    What belongs in section A?
    Grading function: answer=="N-1"
    Your answer was: N-1
-Nice job! You have earned 10 points.
+Glad you got that one! You have earned 10 points.
 
 Explanation: The predicate uses <= so we must stop when i is greater than N-1.  Thus N=1 goes at section "A".
 
@@ -70,7 +70,7 @@ Question:
    What belongs in section B?
    Grading function: answer.include?("above")
    Your answer was: Any of the above
-You have chosen wisely! You have earned 10 points.
+Nice job! You have earned 10 points.
 
 Explanation: All of the choices increase i by 1, which is what is needed at section "B".
 
@@ -78,7 +78,7 @@ Question:
    What belongs in section C?
    Grading function: answer=="N-1-i"
    Your answer was: N-1-i
-Glad you got that one! You have earned 10 points.
+Way to go! You have earned 10 points.
 
 Explanation: The indexes here must go backwards, starting at the last valid index of the array, which is at N-1.  When i is 0, N-1-i is N-1, the last element;  when i is N-1, N-1-(N-1) is 0, the first element.  Thus N-1-i is the only valid choice for "C".
 
