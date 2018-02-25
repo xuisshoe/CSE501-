@@ -60,7 +60,7 @@ public class Lab5Tester {
 		{
 			int n = random.nextInt(i + 1) + 1; //n > 0
 			
-			double calcSum = Lab5Methods.harmonicSum(n);
+			double calcSum = Lab5Methods.HarmonicSum(n);
 			double sum = 0;
 			int nCopy = n;
 			
@@ -91,7 +91,7 @@ public class Lab5Tester {
 		{
 			int k = random.nextInt(i + 1);//k >= 0
 			
-			double calcSum = Lab5Methods.geometricSum(k);
+			double calcSum = Lab5Methods.GeometricSum (k);
 			double sum = 0;
 			
 			int kCopy = k;
@@ -133,7 +133,7 @@ public class Lab5Tester {
 		{
 			int j = random.nextInt(1000)+1; // j is positive
 			int k = random.nextInt(2000)+1; // k is positive
-			checkMult(j, k, Lab5Methods.multPos(j,k));
+			checkMult(j, k, Lab5Methods.MultPos (j,k));
 		}
 	}
 	
