@@ -1,10 +1,11 @@
 package lab5;
 
 public class Lab5Methods {
+	
 	/**
 	 * 
-	 * @param n
-	 * @return
+	 * @param n an integer
+	 * @return n, an integer minus 2
 	 */
 	public static int sumDownBy2 (int n) {
 		int sum = 0;
@@ -19,10 +20,11 @@ public class Lab5Methods {
 		}
 		return sum;
 	}
+	
 	/**
 	 * 
 	 * @param n
-	 * @return
+	 * @return sum, from 1/1 + 1/2 + ... + 1/n
 	 */
 	public static double HarmonicSum (int n) {
 		double sum = 0;
@@ -32,10 +34,11 @@ public class Lab5Methods {
 		}
 		return sum;
 	}
+	
 	/**
 	 * 
 	 * @param k
-	 * @return
+	 * @return geometric sum, 2^0 + 2^1 + ... + 2^k
 	 */
 	public static double GeometricSum (int k) {
 		double sum = 0;
@@ -45,11 +48,12 @@ public class Lab5Methods {
 		}
 		return sum;
 	}
+	
 	/**
 	 * 
 	 * @param j
 	 * @param k
-	 * @return
+	 * @return multiply result of j*k
 	 */
 	public static int MultPos(int j, int k) {
 		int sum = 0;
@@ -58,11 +62,12 @@ public class Lab5Methods {
 		}
 		return sum;
 	}
+	
 	/**
 	 * 
 	 * @param j
 	 * @param k
-	 * @return
+	 * @return multiple result of j*k with condition of negative conditions
 	 */
 	public static int mult(int j, int k) {
 		int sum = MultPos(Math.abs(j),Math.abs(k));
@@ -74,11 +79,12 @@ public class Lab5Methods {
 		}
 		return sum;
 	}
+	
 	/**
 	 * 
 	 * @param n
 	 * @param k
-	 * @return
+	 * @return exponential calculation log(n) k (eg: log(2)1 = 0, 2^0 = 1)
 	 */
 	public static int expt(int n, int k) {
 		int exp = 1;
