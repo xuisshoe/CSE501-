@@ -8,15 +8,37 @@ public class Add {
 	//   add(x,y) = add(x+1,y-1), otherwise
 	//
 	public static int add(int x, int y) {
-		return 0;  // FIXME
+		// required y >= 0
+		if( y ==  0) {
+			return x;
+		}
+		else {
+			return add(x+1,y-1);
+		}
 	}
-	
+//	public static int add(int x, int y) {
+//		if (y < 0) {
+//			if (x < 0) {
+//				return -addBase(-x,-y);
+//			}
+//			else {
+//				return addBase(y,x);
+//			}
+//			
+//		}
+//		else {
+//			return addBase(x, y);
+//		}
+//		
+//	}
+//	
 	//
 	// Answer in comments below:
 	//
 	//  For what values of x and y does your method operate correctly?
 	//
 	//  Your answer:
+	//  x could be any int value; but y has to be nonnegative
 	//
 	//  Can you complete the following method
 	//   so that it calls add but returns the correct answer
@@ -26,8 +48,15 @@ public class Add {
 	public static int addAny(int x, int y) {
 		if (y >= 0)
 			return add(x,y);
-		else
-			return 0; // FIXME
+		else {
+			if (x < 0 ) {
+				return -add(-x,-y);
+			}
+			else {
+				return add(y,x);
+			}
+		}
+			
 	}
 
 }
