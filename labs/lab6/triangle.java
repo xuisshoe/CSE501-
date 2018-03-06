@@ -34,7 +34,7 @@ public class triangle {
 		double y3[] = {ly - h/2, ly - h/2 - h/2, ly - h/2};
 		StdDraw.filledPolygon(x3, y3);
 		// pause to slow down the drawing action 
-		StdDraw.pause(500);
+		//StdDraw.pause(500);
 		
 		//recursion to draw partition triangle 
 		tri(lx + a/4, ly + h/2, h/2, a/2);// upper

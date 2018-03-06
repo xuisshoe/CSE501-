@@ -19,6 +19,15 @@ public class Methods {
 		}
 	}
 	
+	/**
+	 * 
+	 * @param x
+	 * @param y
+	 * @return the out put of g(x) 
+	 * g(x,y) = y+1 for x = 0;
+	 * g(x,y) = g(x-1,1) for x = 0;
+	 * g(x,y) = g(x-1, g(x,y-1)) for x = 0;
+	 */
 	public static int g(int x, int y) {
 		if (x == 0) {
 			return (y+1);
@@ -33,7 +42,7 @@ public class Methods {
 	}
 
 	/**
-	 * @param args
+	 * printing the result
 	 */
 	public static void main(String[] args) {
 		
@@ -41,7 +50,7 @@ public class Methods {
 		System.out.println(f(87));
 		System.out.println(g(1,0));
 		System.out.println(g(1,2));
-		System.out.println(g(2,6));
+		System.out.println(g(2,2));
 		
 		
 
